@@ -1,7 +1,11 @@
-//function to handle reading of files and mergning in values
-//read values from file and get a string
-//merge values into string
+var fs = require('fs');
 
-function view(){
-	
+function view(templateName, values, response){
+	//read from template file
+	var fileContents = fs.readFileSync('./views/'+templateName+'.html')
+  		
+
+	response.write(fileContents);
 }
+
+module.exports.view = view;
